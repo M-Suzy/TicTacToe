@@ -3,6 +3,7 @@ package com.tictactoe;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	Board b = new Board();
+	b.printBoard();
     }
 }
