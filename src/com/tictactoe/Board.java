@@ -11,6 +11,12 @@ public class Board {
             Arrays.fill(table[i], ' ');
         }
     }
+    public void markPosition(int i, int j, char m){
+       if(table[i][j]==' '){
+           table[i][j] = m;
+       }
+       else System.out.println("position is already occupied");
+    }
 
     public void printBoard() {
         for (char[] i : table) {
