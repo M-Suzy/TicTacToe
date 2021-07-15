@@ -17,6 +17,9 @@ public class Board {
        }
        else System.out.println("position is already occupied");
     }
+    public char getPosition(int i, int j){
+        return table[i][j];
+    }
 
     public void printBoard() {
         for (char[] i : table) {
