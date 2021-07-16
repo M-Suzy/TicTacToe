@@ -1,8 +1,10 @@
+package com.tictactoe;
+
 public class Player {
     private String name;
     private char shape; // X or O
     private int score;
-    //static Board board;
+    static Board board;
     //we need static board, so that when calling makeMove() method we change the board
 
     public String getName() {
