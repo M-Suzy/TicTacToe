@@ -9,6 +9,9 @@ public class Player {
     static Board board;
     //we need static board, so that when calling makeMove() method we change the board
 
+    Player(String userName){
+        setName(userName);
+    }
     public String getName() {
         return name;
     }
