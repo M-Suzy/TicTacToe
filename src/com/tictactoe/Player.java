@@ -1,5 +1,7 @@
 package com.tictactoe;
-
+/**
+ * @author: Grigor
+ */
 public class Player {
     private String name;
     private char shape; // X or O

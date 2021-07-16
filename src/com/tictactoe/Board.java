@@ -1,7 +1,9 @@
 package com.tictactoe;
 
 import java.util.Arrays;
-
+/**
+ * @author: Suzy
+ */
 public class Board {
     private char[][] table = new char[3][3];
     String result;
