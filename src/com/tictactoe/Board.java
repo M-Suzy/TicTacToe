@@ -1,5 +1,13 @@
 package com.tictactoe;
 
+/*
+Board is indexed the following way:
+i\j   0    1    2
+0   ____|____|____
+1   ____|____|____
+2   ____|____|____
+
+*/
 import java.util.Arrays;
 /**
  * @author: Suzy
