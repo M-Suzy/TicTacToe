@@ -36,7 +36,7 @@ public class GameDemo {
         Player.board = new Board();
         //game logic
         System.out.println("couple of rules: 1. indexing starts from 0. first input horizontal index then vertical. ");
-        while (sc.hasNext()) {
+        while (true) {
             System.out.println(player_x.getName() + ", input move position");
             int i=0, j=0;
             while(!sc.hasNextInt()) {
@@ -59,8 +59,13 @@ public class GameDemo {
             if(checkForWin(i, j, Player.board)) {
                 Player.board.result = player_x.getName();
                 System.out.println("Do you wanna save game result?");
-                save = sc.nextLine();
-                if(save=="True")
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                save = sc.next();
+                if(save.equalsIgnoreCase("Yes"))
                     endGame(true);
                 else {
                     endGame(false);
@@ -78,7 +83,7 @@ public class GameDemo {
             }
             i = sc.nextInt();
             j = sc.nextInt();
-            while (i > 2 || i < 0 || j > 2 || j < 0) {
+            while (i > 2 || i < 0 || j > 2 || j < 0 || Player.board.getPosition(i, j) != ' ') {
                 System.out.println("invalid input, try again");
                 i = sc.nextInt();
                 j = sc.nextInt();
@@ -88,15 +93,13 @@ public class GameDemo {
                 Player.board.result = player_o.getName();
                 System.out.println("Do you wanna save game results?");
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                save = sc.nextLine();
+                save = sc.next();
                 if(save.equalsIgnoreCase("Yes")) {
                     endGame(true);
-                    System.out.println(save);
-
                 }
                 else {
                     endGame(false);
@@ -107,11 +110,11 @@ public class GameDemo {
                 Player.board.result = "Draw";
                 System.out.println("Do you wanna save game results?");
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                save = sc.nextLine();
+                save = sc.next();
                 if (save.equalsIgnoreCase("Yes")) {
                     endGame(true);
                     System.out.println(save);

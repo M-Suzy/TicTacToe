@@ -41,13 +41,14 @@ public class Player {
 
     // will change the board
     // after each move prints the board
-    public void makeMove(int i, int j) {
+    public boolean makeMove(int i, int j) {
         if (board.getPosition(i, j) == ' '){
             board.markPosition(i, j, this.shape);
             System.out.println("Board after this move");
             board.printBoard();
-            return;
+            return true;
         }
         System.out.println("position already marked, try another position");
+        return false;
     }
 }
