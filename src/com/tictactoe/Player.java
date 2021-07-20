@@ -1,5 +1,10 @@
 package com.tictactoe;
 
+import java.util.Scanner;
+
+/**
+ * @author: Grigor
+ */
 public class Player {
     private String name;
     private char shape; // X or O
@@ -7,6 +12,9 @@ public class Player {
     static Board board;
     //we need static board, so that when calling makeMove() method we change the board
 
+    Player(String userName){
+        setName(userName);
+    }
     public String getName() {
         return name;
     }
@@ -32,8 +40,15 @@ public class Player {
     }
 
     // will change the board
-    public void makeMove(int i, int j) {
-
+    // after each move prints the board
+    public boolean makeMove(int i, int j) {
+        if (board.getPosition(i, j) == ' '){
+            board.markPosition(i, j, this.shape);
+            System.out.println("Board after this move");
+            board.printBoard();
+            return true;
+        }
+        System.out.println("position already marked, try another position");
+        return false;
     }
-
 }
